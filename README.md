@@ -1,2 +1,2 @@
-# profject-2-2023-lemp-stack
+# project-2-2023-lemp-stack
 Lemp stack implementation

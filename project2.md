@@ -5,6 +5,8 @@ Create  a new instance on AWS
 
 ![creating an aws instance](./images/installing-nginx/creating-an-ubuntu-instance.png)
 
+INSTALLING NGINX WEB SERVER
+
 `sudo apt update`
 
 ![updating servers package index](./images/installing-nginx/updating-servers-package-index.png)
@@ -38,6 +40,59 @@ curl http://localhost:80
 `curl -s http://169.254.169.254/latest/meta-data/public-ipv4`
 
 ![nginx server url request response](./images/installing-nginx/nginx-server-url-request-response.png)
+
+INSTALLING MYSQL 
+
+`sudo apt install msql-server`
+
+![installing mysql server](./images/installing-mysql/installing-mysql-server-step1.png)
+
+![installing mysql server](./images/installing-mysql/installing-mysql-server-step2.png)
+
+![installing mysql server](./images/installing-mysql/installing-mysql-server-step3.png)
+
+![installing mysql server](./images/installing-mysql/installing-mysql-server-step4.png)
+
+`sudo mysql`
+
+![login in to mysql console](./images/installing-mysql/login-in-to-mysql-console.png)
+
+`ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'PassWord.1';`
+
+![setting up password for root user](./images/installing-mysql/setting-up-password-for-root-user.png)
+
+run interactive script pre-installed with mysql to remove insecure settings and lockdown access to database
+
+`sudo mysql_secure_installation`
+
+![mysql installation interactive script](./images/installing-mysql/running-interactive-script-for-mysql-installation.png)
+
+test login in into mysql console
+
+`sudo mysql -p`
+
+![testing login into mysql console](./images/installing-mysql/testing-login-into-mysql-console.png)
+
+exit mysql console with command "exit"
+
+![exiting mysql console](./images/installing-mysql/exiting-mysql-console.png)
+
+
+INSTALLING PHP
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

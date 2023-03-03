@@ -78,7 +78,11 @@ exit mysql console with command "exit"
 ![exiting mysql console](./images/installing-mysql/exiting-mysql-console.png)
 
 
-INSTALLING PHP
+INSTALLING PHP to process code and generate dynamic content for the webserver
+
+`sudo apt install php-fpm php-msql`
+
+![installing php-pfm and php-mysql](./images/installing-php/installing-php.png)
 
 
 

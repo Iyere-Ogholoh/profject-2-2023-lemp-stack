@@ -85,6 +85,71 @@ INSTALLING PHP to process code and generate dynamic content for the webserver
 ![installing php-pfm and php-mysql](./images/installing-php/installing-php.png)
 
 
+CONFIGURING NGINX TO USE PHP PROCESSOR
+
+create root web directory for your domain as follows
+
+`sudo mkdir /var/www/projectLEMP`
+
+![creationg root web directory for your domain](./images/configuring-nginx-to-use-php-processor/creating-root-web-directory-for-your-domain.png)
+
+assign ownership of the directory with the $USER environment table
+
+`sudo chown -R $USER:$USER /var/www/projectLEMP`
+
+![changing ownership of directory](./images/configuring-nginx-to-use-php-processor/changing-ownership-of-directory.png)
+
+open configuration file in nginx sites-available using command line editor (NANO)
+
+![pasting barebones configuration using nano editor](./images/configuring-nginx-to-use-php-processor/pasting-barebones-configuration.png)
+
+Activate your configuration by linking to the config file from Nginx’s sites-enabled directory
+
+`sudo ln -s /etc/nginx/sites-available/projectLEMP /etc/nginx/sites-enabled/`
+
+![activating configuration file](./images/configuring-nginx-to-use-php-processor/activating-cofiguration-file.png)
+
+test configuration for syntax errors
+
+`sudo nginx -t`
+
+![testing configuratiob for syntax errors](./images/configuring-nginx-to-use-php-processor/testing-configuration-for-syntax-errors.png)
+
+disable default nginx host currently configured to listen on port 80
+
+`sudo unlink /etc/nginx/sites-enabled/default`
+
+![disable nginx host](./images/configuring-nginx-to-use-php-processor/disable-nginx-host.png)
+
+reload nginx
+
+`sudo systemctl reload nginx`
+
+![reloading nginx](./images/configuring-nginx-to-use-php-processor/reloading-nginx.png)
+
+test new server block by  creating an index.html file in location /var/www/projectLEMP
+
+`sudo echo 'Hello LEMP from hostname' $(curl -s http://169.254.169.254/latest/meta-data/public-hostname) 'with public IP' $(curl -s http://169.254.169.254/latest/meta-data/public-ipv4) > /var/www/projectLEMP/index.html`
+
+![testing new server block](./images/configuring-nginx-to-use-php-processor/testing-new-server-block.png)
+
+open url in browser
+
+![opening url in browser](./images/configuring-nginx-to-use-php-processor/opening-url-in-browser.png)
+
+accessing website with public DNS name
+
+![accessing site with public dns name](./images/configuring-nginx-to-use-php-processor/accessing-site-with-public-dns-name.png)
+
+
+
+
+
+
+
+
+
+
 
 
 
